@@ -30,6 +30,7 @@ import { MapComponent } from './profile/map/map.component';
 import { AgmCoreModule } from '@agm/core';
 import { EditpropicComponent } from './profile/editpropic/editpropic.component';
 import { ProfileeditComponent } from './profile/profileedit/profileedit.component';
+import { AdminComponent } from './admin/admin.component';
  
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { ProfileeditComponent } from './profile/profileedit/profileedit.componen
     ParkkeepersComponent,
     MapComponent,
     EditpropicComponent,
-    ProfileeditComponent
+    ProfileeditComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
