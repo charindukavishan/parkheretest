@@ -1,0 +1,118 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div a class="row">
+    <div  class="col-md-12 mr-auto ml-auto">
+      <div class="card">  <p *ngIf="issuccess">
+          <ngb-alert type="info"  [dismissible]="false">
+              <div class="container">
+                  <ng-container>
+                      <i class="nc-icon nc-check-2"></i>
+                  </ng-container>
+      {{ message }}
+                  <button type="button" name="button" class="close" (click)="closeAlert()">
+                      <i class="nc-icon nc-simple-remove"></i>
+                  </button>
+              </div>
+          </ngb-alert>
+      </p>
+        <div class="card-header">
+          <h5 class="title">Edit profile</h5>
+        </div>
+        <div class="card-body">
+          <form #regForm="ngForm">
+            
+            <div class="row">
+              <div class="col-md-6 pr-1">
+                <div class="form-group">
+                  <label>First Name</label>
+                  <input #firstname="ngModel" [value]="userDetails.firstName" id="firstName" name="firstName" type="text" class="form-control" placeholder="Company" [(ngModel)]="reg.firstName">
+                  <!-- <div class="form-control-feedback" [hidden]="firstname.valid">First Name is </div> -->
+                  <div class="form-control-feedback" [hidden]="firstname.valid">Email is  and must be valid</div>
+                </div>
+              </div>
+              <div class="col-md-6 pl-1">
+                <div class="form-group">
+                  <label>Last Name</label>
+                  <input #lastName="ngModel" [value]="userDetails.lastName" type="text" id="lastName" name="lastName" class="form-control" placeholder="Last Name" [(ngModel)]="reg.lastName">
+                  <div class="form-control-feedback" [hidden]="lastName.valid">Email is  and must be valid</div>
+
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row"> -->
+                <!-- <div class="col-md-5 pr-1">
+                  <div class="form-group">
+                    <label>Company (disabled)</label>
+                    <input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+                  </div>
+                </div> -->
+                <!-- <div class="col-md-3 px-1">
+                  <div class="form-group">
+                    <label>Username</label>
+                    <input type="text" class="form-control" placeholder="Username" value="michael23">
+                  </div>
+                </div> -->
+                <!-- <div class="col-md-12 pl-1">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" placeholder="Email">
+                  </div>
+                </div> -->
+              <!-- </div> -->
+              <div class="row">
+                  <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input disabled="" #email="ngModel" pattern="^[^\s@]+@[^\s@]+\.[^\s@]{2,}$" id="email" [value]="userDetails.email" type="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="reg.email">
+                      </div>
+                  </div>
+                </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>Address</label>
+                  <input #address="ngModel" id="address" [value]="userDetails.address" name="address" type="text" class="form-control" [(ngModel)]="reg.address">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4 pr-1">
+                <div class="form-group">
+                  <label>City</label>
+                  <input #city="ngModel" type="text" [value]="userDetails.city" id="city" name="city" class="form-control" placeholder="City" [(ngModel)]="reg.city">
+                </div>
+              </div>
+              <div class="col-md-4 px-1">
+                <div class="form-group">
+                  <label>Country</label>
+                  <input #country="ngModel" type="text" [value]="userDetails.country" id="country" name="country" class="form-control" placeholder="Country" [(ngModel)]="reg.country">
+                </div>
+              </div>
+              <div class="col-md-4 pl-1">
+                <div class="form-group">
+                  <label>Postal Code</label>
+                  <input #zip="ngModel" type="number" [value]="userDetails.email" id="zip" name="zip" class="form-control" placeholder="ZIP Code" [(ngModel)]="reg.zip">
+                  <div class="form-control-feedback" [hidden]="email.valid">Must be number</div>
+                </div>
+              </div>
+            </div>
+            <!-- <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label>About Me</label>
+                  <textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" >Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
+                </div>
+              </div>
+            </div> -->
+           
+            <div class="ml-auto mr-auto text-center">
+                <button (click)="edit()" [disabled]="!regForm.valid" class="btn btn-outline-default btn-round"><i class="nc-icon nc-tap-01"></i>Submit</button>
+             </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>

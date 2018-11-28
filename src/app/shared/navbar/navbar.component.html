@@ -1,0 +1,83 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-transparent" color-on-scroll="500">
+    <div class="container">
+        <div class="navbar-translate">
+            <a class="navbar-brand" routerLink="/home" >PARK HERE</a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation" (click)="sidebarToggle()">
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+                <span class="navbar-toggler-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarToggler">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item" *ngIf="isHome()">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="" target="_blank">
+                        <i class="fa fa-twitter"></i>
+                        <p class="d-lg-none">Twitter</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="isHome()">
+                    <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="" target="_blank">
+                        <i class="fa fa-facebook-square"></i>
+                        <p class="d-lg-none">Facebook</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="isHome()">
+                    <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="" target="_blank">
+                        <i class="fa fa-instagram"></i>
+                        <p class="d-lg-none">Instagram</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="isHome()">
+                    <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="" target="_blank">
+                        <i class="fa fa-github"></i>
+                        <p class="d-lg-none">GitHub</p>
+                    </a>
+                </li>
+                <li class="nav-item" *ngIf="isLogin()">
+                    <a routerLink="/user-profile" class="nav-link" href="#"><i class="nc-icon nc-single-02" aria-hidden="true"></i>&nbsp;Profile</a>
+                </li>
+                <li routerLink="/signup"  class="nav-item" *ngIf="!isLogin()">
+                    <a target="_blank" class="btn btn-info btn-default">Log In</a>
+                </li>
+                <li routerLink="/signin" class="nav-item" *ngIf="!isLogin()">
+                    <a  target="_blank" class="btn btn-danger btn-round">Register</a>
+                </li>
+                <!-- <li class="nav-item" *ngIf="!isHome()">
+                    <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
+                    <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Kit</a>
+                </li>
+                <li class="nav-item" *ngIf="isDocumentation()">
+                    <a href="https://github.com/creativetimofficial/paper-kit-2-angular/issues?ref=pk2-free-local" target="_blank" class="nav-link">Have an issue</a>
+                </li> -->
+                <li *ngIf="isLogin()" class="nav-item ">
+                    <div ngbDropdown class="dropdown" placement="bottom-left">
+                    <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-settings-gear-65" aria-hidden="true"></i></a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-danger dropdown-menu-right">
+                            <a routerLink="/user-profile/edit" class="dropdown-item">Edit Profile</a>
+                            <a class="dropdown-item">Settings</a>
+                            <!-- <a class="dropdown-item">Something else is here</a> -->
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" (click)="signout()">Sign out</a>
+                        </div>
+                    </div>
+                </li>
+                <li *ngIf="isLogin()" class="nav-item ">
+                    <div ngbDropdown class="dropdown" placement="bottom-left">
+                        
+                    <a class="nav-link" id="dropdownBasic1" ngbDropdownToggle><i class="nc-icon nc-email-85" aria-hidden="true"></i><b class="caret"></b>
+                        <span class="notification hidden-sm hidden-xs">5</span></a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="dropdown-danger dropdown-menu-right">
+                            <a routerLink="/user-profile/send" class="dropdown-item">Send Files</a>
+                            <a routerLink="/user-profile/inbox" class="dropdown-item">Inbox</a>
+                            <a class="dropdown-item">Send</a>
+                            <!-- <a class="dropdown-item">Something else is here</a> -->
+                            <!-- <div class="dropdown-divider"></div> -->
+                            <!-- <a class="dropdown-item">Separated link</a> -->
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

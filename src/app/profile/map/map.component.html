@@ -1,0 +1,31 @@
+
+  <div class="panel-header panel-header-sm">
+    </div>
+    <div class="main-content">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card ">
+            <div class="card-header ">
+              Google Maps
+            </div>
+            <div class="card-body ">
+                <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom">
+                    <!-- <agm-direction
+                      *ngIf="destination.lat !== null"
+                      [origin]="{ lat: lat, lng: lng }"
+                      [destination]="destination"
+                    >
+                    </agm-direction> -->
+        
+                    <agm-marker
+                    *ngIf="destination.lat === null"
+                    [latitude]="lat"
+                    [longitude]="lng"
+                  ></agm-marker>
+                  </agm-map>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
